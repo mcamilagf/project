@@ -1,0 +1,166 @@
+<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
+<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
+<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
+<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
+
+<!-- Take a look around and make your own copy to adapt for your own use. -->
+
+<!-- This is a comment -->
+<!-- Comments are not displayed in the browser -->
+<!-- They can be used to leave notes in the code -->
+
+<!DOCTYPE html>
+<html>
+<!-- HTML is heirarchial: tags like this define elements on the page. 
+    Each tag does something different. For example:
+        - The <html> tag defines the whole document.
+        - The <h1> tag defines a large heading
+        - The <p> tag defines a paragraph
+        - Tags appear as an opening <div> and closing </div> pair
+    -->
+
+<head>
+    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+
+    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
+    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
+    <link rel="stylesheet" type="text/css" href="./portfolio_style.css">
+    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+
+    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The body tag contains the elements that visitors to our page will see. -->
+    <h1 class="big" style="margin-bottom: 0px;">
+        <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
+        <!-- This is a header, it is the largest text on the page -->
+        Camila's Project
+    </h1>
+    <p style="margin-top: 0px; color: darkblue">
+        <!-- we're setting the margin to 0px so the header and authour name are close together -->
+        Maria Camila Gomez Fernandez | <a href="https://www.linkedin.com/in/maria-camila-gomez-fernandez-8a3133167/">LinkedIn</a> | <a
+            href="https://www.github.com/mcamilagf">GitHub</a> | <a href="https://mcamilagf.github.io/">Portfolio</a>
+    </p>
+    <h3 class="small">
+        <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
+        Macroeconomic and fiscal scenario – Colombia 
+    </h3>
+
+    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <section>
+        <div class="chart-description">
+            <h2><b>Aim</b></h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                The project aims to present Colombia's medium-term fiscal outlook based on the 2024 Medium-Term Fiscal Framework (MTFF) projections and answer the question: Is Colombia's medium-term macroeconomic and fiscal scenario reliable to ensure debt sustainability?
+            </p>
+            <p>
+                To better understand the project, it is important to note that the Medium-Term Fiscal Framework is the macroeconomic and fiscal roadmap the National Government uses for the next 10 years. This document is legally mandated (Article 1 of Law 819 of 2003), is published every June, and serves as a primary input for discussions with investors, credit rating agencies, and institutions, as well as for debates in Congress and with other stakeholders.
+            </p>
+            <p>
+                As an advisor to the Ministry of Finance, I intend to apply the knowledge gained during the course. I deepened my understanding of graph construction in Python to visualise the medium-term projected results.
+            </p>
+        </div>        
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2><b>Challenges and data</b></h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                During the process, several challenges arose, some related to data accessibility and others related to graph construction. The Ministry of Finance's institutional website was recently updated, so I had to rely on data I had downloaded at the beginning of the project, as it is currently unavailable on the Ministry's website. 
+            </p><p>
+                However, all the data sources are from the Ministry of Finance and Public Credit of Colombia, which is legally obligated to publish this information periodically to promote transparency in public finances. (<a href = "https://www.minhacienda.gov.co/webcenter/portal/EntidadesFinancieras/pages_EntidadesFinancieras/marcofiscalmedianoplazo/marcofiscaldemedianoplazo2024">MinHacienda</a>)
+            </p><p>
+                The analytical challenges were numerous:
+            </p>
+            <ul>
+                <li>I needed to strengthen my knowledge of Python, particularly the libraries matplotlib and seaborn. These libraries generate the charts I needed for the analysis, and I also needed to know how to use the melt function to reshape the data for visualization.</li>
+                <li>Understanding that charts are built layer by layer. This was crucial, especially since each chart had a high level of detail involving information within the bars, lines, and labels for different periods.</li>
+                <li>There is no straightforward way to place data labels. Therefore, it was necessary to use the plt.text function and spatially position them in x and y coordinates.</li>
+                <li>After creating the charts layer by layer using Matplotlib, I realised that another library called Plotly can be used to create dynamic charts more simply and directly.</li>
+                <li>To embed Plotly charts in HTML, I had to learn what an iframe and a script in HTML are.</li>
+                <li>Finally, one of the biggest challenges was learning to ask Google the right questions to achieve the desired outcome.</li>
+
+            </ul> 
+            <p>
+                The most relevant data include fiscal and primary balances, gross and net debt, Central National and General Government revenues and expenditures, and the current account balance. This data is critical for visualising the scenario that ensures medium-term fiscal stability and debt sustainability in strict compliance with the Fiscal Rule. For more information about the definitions mentioned above, go to the glossary.
+            </p>
+        </div>        
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2><b>Conclusion</b></h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                In conclusion, data visualisation tools are handy, particularly in environments with technical language. It is highly beneficial to systematise a webpage to include the content shown here and serve as input for various discussions. Building the graphs was challenging; however, the information needed to solve doubts is readily available online.
+            </p><p>
+                As a technical conclusion of the presented scenario, Colombia's medium-term economic outlook reflects a comprehensive strategy to foster growth, maintain fiscal sustainability, and address external imbalances.
+            </p><p>
+                The country is undergoing productive transformation, with an economic growth projection of 3.1%, driven by the expansion of non-traditional and service sectors alongside increased infrastructure investment. Fiscal policies emphasise sustainability through adherence to the Fiscal Rule, reduction of fiscal deficits, and focus on revenue growth and expenditure management. Simultaneously, efforts to diversify exports and attract foreign direct investment will support external balance and stabilize net external liabilities.
+            </p><p>
+                Finally, public debt indicators demonstrate a commitment to gradual reduction, reinforcing fiscal discipline and economic stability. Together, these strategies ensure a resilient and sustainable trajectory for Colombia's economic development.
+            </p>
+        </div>        
+    </section>
+    
+    <section>
+        <div class="chart-description">
+            <h2>Medium-Term Fiscal and Macroeconomic Scenario</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                <b>• Economic Growth:</b> The Colombian economy is expected to grow at around 3.1% in the medium term, provided no additional disruptions occur. This performance would be supported by the strengthening of non-traditional and service sectors and a revival in construction (driven by increased public and private infrastructure investment). This scenario will be framed within a context of productive transformation, reflected in the implementation of the reindustrialisation policy and the energy transition plan.
+            </p><p>
+                <b>• Current Account:</b> The process of productive transformation would encourage growth in non-traditional and service exports, supporting the diversification of the country’s export basket and correcting the current account deficit. This imbalance, projected to converge to levels that allow stabilisation of net external liabilities in the medium term (2.3%), would be financed mainly through foreign direct investment flows concentrated in non-mining energy sectors.
+            </p>
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G33.html"></iframe>
+            <p>
+                <b>• Fiscal Deficit:</b> In 2023, the fiscal deficit of the Central National Government (CNG) was 4.3% of GDP, improving by 0.2 percentage points over the Fiscal Rule target and correcting by 1.0 percentage points compared to the previous year. For 2024, the fiscal deficit of the CNG is estimated to reach 5.6% of GDP, meeting the targets set by the Fiscal Rule. This figure is 1.4 percentage points higher than in 2023 and 0.3 percentage points above the projection in the updated Financial Plan. The increased fiscal deficit is mainly due to a reduction in projected total government revenues (primarily explained by the anticipated decline in tax collection), estimated to reach 17.1% of GDP. In response to this outlook, and with the commitment to preserving the sustainability of public finances, the national government decided to significantly adjust projected primary spending, which would decrease from 19.2% of GDP in 2023 to 18.0% of GDP in 2024.
+            </p><p>
+                The CNG will ensure the sustainability of public finances through continuous improvements in the primary balance, allowing for the maintenance of a declining trend in the fiscal deficit and public debt. The medium-term fiscal strategy will align with strict adherence to the Fiscal Rule's targets.
+            </p>
+            <img width="900" height="400" src="./G35.png" alt="Graph 3.5">
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G15.html"></iframe>
+            <p>
+                <b>• Fiscal Revenues:</b> The increase in revenues over the medium term will stem from higher tax and capital revenues, rising from 17.5% of GDP in 2025 to 19.7% in 2035, with non-tax revenues reaching 1.6% of GDP mainly due to transfers from the Central Bank and dividends from Ecopetrol.
+            </p>
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G36.html"></iframe>
+            <p>
+                <b>• Fiscal Spending:</b> The reduction in spending will focus on interest payments, decreasing by one percentage point between 2025 and the average for 2026 to 2035, while primary spending will follow a slightly increasing path toward levels of 22.1% of GDP.
+            </p>
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G39.html"></iframe>
+            <p>
+                <b>• Public Debt:</b> The net debt of the Central National Government (CNG) was 53.8% of GDP in 2023, 2.0 percentage points lower than projected, reflecting a commitment to fiscal sustainability. In 2024, net debt is expected to reach 55.3% of GDP, 1.7 percentage points below projections, while gross debt is anticipated to decrease by 2.2 percentage points of GDP compared to the updated financial plan. Over the medium term, net debt will gradually rise to a peak of 56.7% of GDP in 2028 before returning to a downward trajectory, aligning closely with the anchor at 55.4% of GDP by 2035.
+            </p>
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G311.html"></iframe>
+            <p>
+                <b>• General Government in the Medium Term:</b> The General Government (GG) balance will continue correcting in the medium term, shifting from a deficit of 3.8% of GDP in 2026 to 2.5% in 2035. Meanwhile, average primary surpluses of 1.3% of GDP between 2026 and 2035 would gradually reduce total, consolidated, and net debt to 58.9%, 53.3%, and 47.7% of GDP, respectively.
+            </p>
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G312.html"></iframe>
+            <iframe width="900" height="400" frameborder="0" scrolling="no" src="./G313.html"></iframe>
+        </div>        
+    </section>
+    <section>
+        <div class="chart-description">
+            <h2>Glossary of terms taken from the 2024 Medium-Term Fiscal Framework document:</h2>
+            <ul> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                <li><b>Fiscal balance:</b> The difference between total fiscal revenues and expenditures for a given period.</li>
+                <li><b>Primary balance:</b> The result of adding interest payments to the fiscal balance. It is the difference between total revenues and expenditures, excluding interest payments. In the short term, this balance is the primary tool under the government's control for stabilising gross public debt.</li>
+                <li><b>Current account:</b> Records the export and import of goods and services, as well as income and expenses generated by the use of production factors (primary income) and current transfers (secondary income) of a country.</li>
+                <li><b>Gross debt:</b> The nominal value of all public sector or subsector debts held by private and public agents, both domestic and foreign. This calculation includes financial debt (bonds and loans from multilateral organisations in local and foreign currency), promissory notes, and accounts payable, among others. For the Central National Government (CNG), gross debt includes the recognition of liabilities made in 2019.</li>
+                <li><b>Net debt:</b> The result of subtracting liquid financial assets from gross debt. These assets include cash availability, debt securities portfolios, and treasury accounts. This consists of the balance of the Nation’s resources in trusts for the CNG.</li>
+                <li><b>Debt limit and anchor:</b> The debt limit refers to the theoretical value beyond which the net debt path becomes unsustainable, compromising public financial sustainability. This limit is not an observable value. The debt anchor corresponds to the medium-term objective for this variable, around which it should oscillate in the medium term. Similarly, the debt anchor equals the limit minus the prudential margin established to allow debt to absorb the effects of typical adverse shocks experienced by the economy or to implement expansionary policies without risking medium-term sustainability. Thus, the debt anchor indicates a prudent level where the risks of entering an unsustainable trajectory when facing adverse macroeconomic conditions—such as those typically experienced in the past—are minimised.</li>
+                <li><b>Debt sustainability:</b> according to the IMF, public debt can be considered sustainable when the primary balance needed to at least stabilize the debt under a realistic and risky scenario is politically and financially feasible. Such a level of debt is consistent with a low level of debt repayment risk and an adequate level of potential output growth.</li>
+            </ul>
+        </div>
+    </section>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+</html>
